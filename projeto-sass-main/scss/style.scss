@@ -77,7 +77,7 @@ $img-width: 45%;
             }
         }// &__list
 
-        &__links{
+        &__links {
             position: relative;
             @include for-phone-only {
                 padding: 5px 0;
@@ -259,9 +259,12 @@ $img-width: 45%;
     &__sidebar{
         width: 25%;
         padding: 40px 10px;
-        @include for-phone-only{
-            width: 100%;
+        @include for-phone-only {
+            width: 90%;
+            padding: 15px 0;
+            flex-wrap: wrap;
         }
+
     }
 
     .sidebar {
@@ -326,6 +329,9 @@ $img-width: 45%;
     width: 80%;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0 auto 40px;
+    @include for-phone-only {   
+        width: 90%;
+    }
 
     &__title {
         background-color: $light-grey;
@@ -377,6 +383,12 @@ $img-width: 45%;
         margin: 30px auto;
         text-align: center;
         font-size: 16px;
+        @include for-phone-only {   
+            width: 90%;
+        }
+        @include for-tablet-only {   
+            width: 80%;
+        }
     }
 
     &__split {
@@ -387,11 +399,19 @@ $img-width: 45%;
     }
 
     &__img-description {
-        width: $img-width;  
+        width: $img-width;
+        @include for-phone-only {   
+            width: 80%;
+        }
+          
     }
 
     &__txt {
         width: calc(100% - #{$img-width});
+        @include for-phone-only {   
+            width: 90%;
+            text-align: center;
+        }
     }
     
     &__p {
@@ -407,6 +427,9 @@ $img-width: 45%;
     width: 80%;
     font-family: Arial, Helvetica, sans-serif;
     margin: 0 auto 40px;
+    @include for-phone-only {   
+        width: 90%;
+    }
 
     &__title {
         background-color: $light-grey;
@@ -458,7 +481,7 @@ $img-width: 45%;
     &__date {
         margin:  0 10px;
         font-size: 12px;
-    font-style: italic;
+        font-style: italic;
     }
 
     &__tag{
