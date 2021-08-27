@@ -1,6 +1,49 @@
-body {
-  background: rgba(167, 54, 54, 0.486);
-  color: blue;
-}
+/* header */
+.header {
+  font-family: Arial, Helvetica, sans-serif; }
+  .header_logo {
+    text-align: center; }
+  .header_img {
+    max-width: 350px; }
+  .header .menu_list {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid #eaeaeb;
+    border-bottom: 1px solid #eaeaeb;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding: 20px 0; }
+  .header .menu_links {
+    position: relative; }
+    .header .menu_links:not(:last-child)::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: -3px;
+      margin: auto;
+      height: 15px;
+      background-color: #eaeaeb; }
+  .header .menu_link {
+    padding: 0 25px;
+    color: #464646; }
+    .header .menu_link:hover {
+      color: #a050be; }
+
+/* Rodapé */
+.footer {
+  text-align: center;
+  padding: 20px 0;
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%); }
+  .footer_logo {
+    max-width: 100px; }
+  .footer_txt {
+    margin: auto;
+    font-size: 14px; }
 
 /*# sourceMappingURL=style.css.map */
