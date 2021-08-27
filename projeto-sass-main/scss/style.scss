@@ -1,7 +1,9 @@
-//Variveis do sass
+///Variveis do sass
 $purple: #a050be;
 $light-grey: #eaeaeb;
 $dark-grey: #464646;
+
+/* header */
 .header{
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -48,4 +50,24 @@ $dark-grey: #464646;
 
 .header_menu .menu_list .menu_links .menu_link{
     color: $purple;
+}
+/* Rodapé */
+.footer {
+    text-align: center;
+    padding: 20px 0;
+    font-family: Arial, Helvetica, sans-serif;
+    // Posicionamento do footer
+    position: relative;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.footer .footer_logo {
+    max-width: 100px;
+}
+
+.footer .footer_txt {
+    margin: auto;
+    font-size: 14px;
 }
