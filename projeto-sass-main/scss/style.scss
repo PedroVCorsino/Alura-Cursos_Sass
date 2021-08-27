@@ -6,68 +6,76 @@ $dark-grey: #464646;
 /* header */
 .header{
     font-family: Arial, Helvetica, sans-serif;
-}
 
-.header_logo {
-    text-align: center;
-}
+    &_logo {
+        text-align: center;
+    }// &_logo
+    
+    &_img {
+        max-width: 350px;
+    }// &_img
 
-.header_logo .header_img {
-    max-width: 350px;
-}
+    .menu{
+        &_list {
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid $light-grey;
+            border-bottom: 1px solid $light-grey;
+            margin-left:  auto;
+            margin-right: auto;
+            width: 80%;
+            padding: 20px 0;
+        }// &_list
 
-.header_menu .menu_list {
-    display: flex;
-    justify-content: center;
-    border-top: 1px solid $light-grey;
-    border-bottom: 1px solid $light-grey;
-    margin-left:  auto;
-    margin-right: auto;
-    width: 80%;
-    padding: 20px 0;
-}
+        &_links{
+            position: relative;
+            
+            &:not(:last-child)::after {
+                content:"";
+                position:  absolute;
+                top: 0;
+                bottom: 0;
+                right: -3px;
+                margin: auto;
+                height: 15px;
+                background-color: $light-grey;
+            }// &:not(:last-child)::after
+            
+        }// &_links
+
+        &_link{
+            padding: 0 25px;
+            color: $dark-grey;
+
+             &:hover{
+                color: $purple;
+            }// &:hover
+
+        }// &_link
+
+    }// .menu
+
+}// .header
 
 
-.header_menu .menu_list .menu_links{
-    position: relative;
-}
 
-.header_menu .menu_list .menu_links:not(:last-child)::after {
-    content:"";
-    position:  absolute;
-    top: 0;
-    bottom: 0;
-    right: -3px;
-    margin: auto;
-    height: 15px;
-    background-color: $light-grey;
-}
-
-.header_menu .menu_list .menu_links .menu_link{
-    padding: 0 25px;
-    color: $dark-grey;
-}
-
-.header_menu .menu_list .menu_links .menu_link{
-    color: $purple;
-}
 /* Rodapé */
 .footer {
     text-align: center;
     padding: 20px 0;
     font-family: Arial, Helvetica, sans-serif;
-    // Posicionamento do footer
-    position: relative;
+    position: absolute;
     bottom: 0;
     left: 50%;
-    transform: translate(-50%);
-}
+    transform: translateX(-50%);
 
-.footer .footer_logo {
-    max-width: 100px;
-}
+    &_logo {
+        max-width: 100px;
+    }// &_logo
+    
+    &_txt {
+        margin: auto;
+        font-size: 14px;
+    }// &_txt
 
-.footer .footer_txt {
-    margin: auto;
-    font-size: 14px;
-}
+}// .footer
