@@ -18,7 +18,7 @@ $img-width: 45%;
     text-decoration: underline;
 }
 
-//Mixins
+// Mixins
 @mixin reset-list {
     margin: 0;
     padding: 0;
@@ -30,6 +30,11 @@ $img-width: 45%;
     #{$property}: $jty-cnt;    
 }
 
+@mixin fontSize($size) {
+    font-size: calculateRem($size);
+}
+
+// mixins para ajuste de tela
 @mixin for-phone-only {
     @media (max-width: 767.98px) { @content; }        
 }
@@ -40,6 +45,11 @@ $img-width: 45%;
 
 @mixin for-desktop-only {
     @media (min-width: 1200px) { @content; }        
+}
+
+// funções
+@function calculateRem($size) {
+    @return $size / 16px * 1rem;
 }
 
 /* header */
@@ -126,7 +136,7 @@ $img-width: 45%;
     
     &__txt {
         margin: auto;
-        font-size: 14px;
+        @include fontSize(14px);
     }// &__txt
 }// .footer
 
@@ -154,7 +164,7 @@ $img-width: 45%;
 
     &__title {
         text-decoration: none;
-        font-size: 22px;
+        @include fontSize(22px);
         color: $dark-grey;
         letter-spacing: 1.5;
 
@@ -174,12 +184,12 @@ $img-width: 45%;
 
     &__date {
         margin: 0 10px;
-        font-size: 10px;
+        @include fontSize(10px);
         font-style: italic;
     }// &__date
 
     &__tag {
-        font-size: 14px;
+        @include fontSize(14px);
         padding: 5px 7px;
         color: $purple;
         border: 1px solid $purple;
@@ -199,12 +209,12 @@ $img-width: 45%;
         max-width: 650px;
         margin-left: auto;
         margin-right: auto;
-        font-size: 14px;
+        @include fontSize(14px);
     }//&__description
 
     &__btn {
         text-decoration: none;
-        font-size: 16px;
+        @include fontSize(16px);
         letter-spacing: 1.5;
         color: $purple;
         background-color: $yellow;
@@ -233,7 +243,7 @@ $img-width: 45%;
     }// &__author
 
     &__p {
-        font-size: 14px;
+        @include fontSize(14px);
         color: $dark-grey;
         margin-top: 10px;
         margin-bottom: 10px;
@@ -245,7 +255,7 @@ $img-width: 45%;
 
     &__a {
         text-decoration: none;
-        font-size: 14px;
+        @include fontSize(14px);
         color: $dark-grey;
         margin-top: 10px;
         margin-bottom: 10px;
@@ -306,7 +316,7 @@ $img-width: 45%;
         }
 
         &__post-title {
-            font-size: 14px;
+            @include fontSize(14px);
             color: $purple;
             @extend %no-decoration;
             &:hover {
@@ -315,7 +325,7 @@ $img-width: 45%;
         }
 
         &__post-date {
-            font-size: 12px;
+            @include fontSize(12px);
             margin: 5px 0 0 0;
         }
 
@@ -340,7 +350,7 @@ $img-width: 45%;
     }
 
     &__h1 {
-        font-size: 22px;
+        @include fontSize(22px);
         color: $dark-grey;
         letter-spacing: 1px;
         margin-top: 5px;
@@ -355,7 +365,7 @@ $img-width: 45%;
 
         &__link {
             text-decoration: none;
-            font-size: 12px;
+            @include fontSize(12px);
             color: $dark-grey;
             &:hover {
                 text-decoration: underline;
@@ -382,7 +392,7 @@ $img-width: 45%;
         width: 70%;
         margin: 30px auto;
         text-align: center;
-        font-size: 16px;
+        @include fontSize(16px);
         @include for-phone-only {   
             width: 90%;
         }
@@ -415,7 +425,7 @@ $img-width: 45%;
     }
     
     &__p {
-        font-size: 14px;
+        @include fontSize(14px);
         padding: 10px 20px;
         color: $dark-grey;
     }
@@ -438,7 +448,7 @@ $img-width: 45%;
     }
 
     &__h1 {
-        font-size: 22px;
+        @include fontSize(22px);
         color: $dark-grey;
         letter-spacing: 1px;
         margin-top: 5px;
@@ -453,7 +463,7 @@ $img-width: 45%;
 
         &__link {
             text-decoration: none;
-            font-size: 12px;
+            @include fontSize(12px);
             color: $dark-grey;
             &:hover {
                 text-decoration: underline;
@@ -480,12 +490,12 @@ $img-width: 45%;
 
     &__date {
         margin:  0 10px;
-        font-size: 12px;
+        @include fontSize(12px);
         font-style: italic;
     }
 
     &__tag{
-        font-size: 14px;
+        @include fontSize(14px);
         padding: 5px 7px;
         color: $purple;
         border: 1px solid $purple;
@@ -494,7 +504,7 @@ $img-width: 45%;
 
     &__content{
         font-weight: 100;
-        font-size: 14px;
+        @include fontSize(14px);
         color: $dark-grey;
         padding: 10px 20px;
     }
